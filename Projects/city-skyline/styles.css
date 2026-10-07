@@ -1,0 +1,145 @@
+:root {
+  --building-color1: #1c1c1c;
+  --building-color2: #2f2f2f;
+  --building-color3: #444;
+  --building-color4: #666;
+  --window-color1: #f5f5f5;
+  --window-color2: #ffd966;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    #87ceeb 0%,
+    #dff6ff 70%,
+    #f5f5f5 100%
+  );
+}
+
+/* Background buildings */
+
+.background-buildings,
+.foreground-buildings {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.background-buildings {
+  height: 75vh;
+  z-index: 1;
+}
+
+.foreground-buildings {
+  height: 65vh;
+  z-index: 2;
+}
+
+.building-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2%;
+}
+
+.building {
+  position: relative;
+  width: 18%;
+  min-height: 20%;
+}
+
+/* Background buildings */
+
+.bb1 {
+  height: 55%;
+  background: var(--building-color2);
+}
+
+.bb2 {
+  height: 75%;
+  background: var(--building-color3);
+}
+
+.bb3 {
+  height: 45%;
+  background: var(--building-color1);
+}
+
+.bb4 {
+  height: 65%;
+  background: var(--building-color4);
+}
+
+/* Foreground buildings */
+
+.fb1 {
+  height: 70%;
+  background: var(--building-color1);
+}
+
+.fb2 {
+  height: 50%;
+  background: var(--building-color3);
+}
+
+.fb3 {
+  height: 80%;
+  background: var(--building-color2);
+}
+
+.fb4 {
+  height: 60%;
+  background: var(--building-color4);
+}
+
+/* Windows */
+
+.building::before {
+  content: "";
+  position: absolute;
+  inset: 8% 12%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--window-color1) 0 10%,
+      transparent 10% 25%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      var(--window-color2) 0 8%,
+      transparent 8% 18%
+    );
+  opacity: 0.7;
+}
+
+/* Smaller screens */
+
+@media (max-width: 48rem) {
+  .background-buildings {
+    height: 65vh;
+  }
+
+  .foreground-buildings {
+    height: 55vh;
+  }
+
+  .building-wrap {
+    gap: 1%;
+  }
+
+  .building {
+    width: 22%;
+  }
+}

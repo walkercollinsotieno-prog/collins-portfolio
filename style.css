@@ -1,0 +1,1305 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   LIVE BACKGROUND
+========================= */
+
+/* Creates the animated background layer */
+body::before {
+  content: ""; /* Creates the pseudo-element */
+  position: fixed; /* Keeps the background fixed while scrolling */
+  inset: 0; /* Makes the layer fill the entire screen */
+
+  /* Places the background layer above the body */
+  z-index: 0;
+
+  /* Prevents the background from blocking clicks */
+  pointer-events: none;
+
+  /* Creates a soft glowing gradient */
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(0, 119, 255, 0.40),
+    transparent 35%
+  );
+
+  /* Makes the background glow move continuously */
+  animation: background-float 12s ease-in-out infinite;
+}
+
+/* Controls how the live background moves */
+@keyframes background-float {
+
+  /* Starting position of the glow */
+  0% {
+    transform: translate(0, 0);
+  }
+
+  /* Move the glow slightly to the right and down */
+  50% {
+    transform: translate(5%, 5%);
+  }
+
+  /* Return the glow to the starting position */
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Keeps the portfolio content above the background */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1rem);
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0077ff;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  width: 100%;
+  height: 0.15rem;
+  background: #0077ff;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+#home {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 6rem 5%;
+  background:
+    radial-gradient(circle at top right, #dbeafe, transparent 35%),
+    radial-gradient(circle at bottom left, #e0f2fe, transparent 35%);
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  top: 10%;
+  right: -8rem;
+  background: rgba(124, 58, 237, 0.12);
+  border-radius: 50%;
+  filter: blur(4rem);
+  animation: glow-float 6s ease-in-out infinite;
+}
+
+.hero-content {
+  max-width: 60rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: hero-enter 1s ease-out;
+}
+
+.hero-intro {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  color: #0077ff;
+  background: rgba(0, 119, 255, 0.08);
+  border: 0.1rem solid rgba(0, 119, 255, 0.15);
+  border-radius: 2rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.hero-description {
+  max-width: 45rem;
+  margin: 0 auto 2rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: #555;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-buttons a {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-buttons a:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 119, 255, 0.2);
+}
+
+.hero-buttons a:first-child {
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  color: white;
+}
+
+.hero-buttons a:last-child {
+  border: 0.15rem solid #0077ff;
+  color: #0077ff;
+}
+
+
+/* =========================
+   HERO ANIMATIONS
+========================= */
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(1rem);
+  }
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+#about {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  padding: 6rem 5%;
+  background: #f8fafc;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 60rem;
+  text-align: center;
+ 
+}
+
+ /* Arranges the profile picture and Who I Am content side-by-side */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 3rem;
+  text-align: left;
+}
+
+/* Holds both profile images in the same position */
+.profile-picture-wrapper {
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+}
+
+/* Places both profile images on top of each other */
+.profile-picture-wrapper .profile-picture {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+
+/* Makes the JavaScript reveal effect move smoothly */
+.profile-hover {
+  transition: clip-path 0.15s ease;
+}
+
+
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  color: #0077ff;
+  background: rgba(0, 119, 255, 0.08);
+  border: 0.1rem solid rgba(0, 119, 255, 0.15);
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.about-content h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-description {
+  max-width: 45rem;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: #555;
+}
+
+
+/* =========================
+   ABOUT HIGHLIGHTS
+========================= */
+
+.about-highlights {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.highlight {
+  padding: 2rem;
+  background: white;
+  border: 0.1rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.highlight h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+.highlight p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+
+/* =========================
+   ABOUT DETAILS
+========================= */
+
+.about-details {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: white;
+  border: 0.1rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-details > div:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+.about-details span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0077ff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about-details strong {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #222;
+}
+
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+#skills {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  padding: 6rem 5%;
+  background: white;
+}
+
+.skills-content {
+  width: 100%;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.skills-content h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-description {
+  max-width: 45rem;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: #555;
+}
+
+
+/* =========================
+   SKILLS GRID
+========================= */
+
+.skills-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+
+/* =========================
+   SKILL CARDS
+========================= */
+
+.skill-card {
+  padding: 2rem;
+  background: #f8fafc;
+  border: 0.1rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.06);
+  text-align: left;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.skill-card h3 {
+  margin-bottom: 1.25rem;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+
+/* =========================
+   SKILL LIST
+========================= */
+
+.skill-card ul {
+  padding-left: 1.25rem;
+}
+
+.skill-card li {
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.skill-card li::marker {
+  color: #0077ff;
+}
+
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+#projects {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  padding: 6rem 5%;
+  background: #f8fafc;
+}
+
+.projects-content {
+  width: 100%;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.projects-content h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-description {
+  max-width: 45rem;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: #555;
+}
+
+
+/* =========================
+   PROJECTS GRID
+========================= */
+
+.projects-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
+  border: 0.1rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   PROJECT PREVIEW
+========================= */
+
+.project-image {
+  min-height: 14rem;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top right, #dbeafe, transparent 40%),
+    linear-gradient(135deg, #e0f2fe, #ede9fe);
+  overflow: hidden;
+}
+
+
+/* =========================
+   PROJECT PREVIEW
+========================= */
+
+.penguin-preview {
+  padding: 1.5rem 2rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #0077ff, #7c3aed);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 119, 255, 0.2);
+  transform: rotate(-3deg);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .penguin-preview {
+  transform: rotate(0deg) scale(1.05);
+}
+
+
+/* =========================
+   PROJECT INFORMATION
+========================= */
+
+.project-info {
+  padding: 2rem;
+  text-align: left;
+  flex: 1;
+}
+
+.project-info h3 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.2;
+  color: #222;
+}
+
+.project-info > p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+
+/* =========================
+   PROJECT TECHNOLOGIES
+========================= */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-tech span {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0077ff;
+  background: rgba(0, 119, 255, 0.08);
+  border: 0.1rem solid rgba(0, 119, 255, 0.15);
+  border-radius: 2rem;
+}
+
+
+/* =========================
+   PROJECT BUTTONS
+========================= */
+
+.project-buttons {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.project-buttons a {
+  padding: 0.75rem 1.2rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.project-buttons a:first-child {
+  color: white;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+}
+
+.project-buttons a:last-child {
+  color: #0077ff;
+  background: white;
+  border: 0.1rem solid #0077ff;
+}
+
+.project-buttons a:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 119, 255, 0.18);
+}
+
+
+/* =========================
+   SERVICES SECTION
+========================= */
+
+#services {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  padding: 6rem 5%;
+  background: white;
+}
+
+.services-content {
+  width: 100%;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.services-content h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-description {
+  max-width: 45rem;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: #555;
+}
+
+.services-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.service-card {
+  padding: 2rem;
+  text-align: left;
+  background: #f8fafc;
+  border: 0.1rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.service-card p {
+  margin: 0;
+  line-height: 1.7;
+  color: #555;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+#contact {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  padding: 6rem 5%;
+  background: #f8fafc;
+}
+
+.contact-content {
+  width: 100%;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.contact-content h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-description {
+  max-width: 45rem;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  color: #555;
+}
+
+.contact-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  text-align: left;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  padding: 1.5rem;
+  background: white;
+  border: 0.1rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.06);
+}
+
+.contact-item h3 {
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.contact-item p,
+.contact-item a {
+  margin: 0;
+  color: #555;
+}
+
+.contact-item a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #0077ff;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 2rem;
+  background: white;
+  border: 0.1rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.06);
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #222;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  font: inherit;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.6rem;
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 119, 255, 0.1);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 119, 255, 0.2);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+#footer {
+  padding: 4rem 5% 2rem;
+  background: #111827;
+  color: white;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+
+.footer-info h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.footer-info p {
+  margin: 0.3rem 0;
+  color: #cbd5e1;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: center;
+  gap: 1rem 1.5rem;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  padding-top: 2rem;
+  margin-top: 1rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   LET'S CONNECT
+========================= */
+
+/* Styles the Let's Connect heading */
+.lets-connect h3 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+/* Arranges the connection links in a flexible row */
+.connect-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Styles each GitHub, LinkedIn, WhatsApp, and Email link */
+.connect-links a {
+  padding: 0.8rem 1.3rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #0077ff;
+  background: white;
+  border: 0.1rem solid #0077ff;
+  border-radius: 0.6rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Adds an interactive effect when the user hovers over a connection link */
+.connect-links a:hover {
+  transform: translateY(-0.2rem);
+  color: white;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 119, 255, 0.2);
+}
+
+/* Styles the entire comment section */
+.comment-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: white;
+  border: 0.1rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+/* Styles the Comment section heading */
+.comment-section h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+/* Styles the short description in the comment section */
+.comment-section > p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Styles the labels above each comment field */
+.comment-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Styles the name and email fields */
+.comment-section input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  font: inherit;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.6rem;
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+/* Styles the larger comment/message box */
+.comment-section textarea {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  font: inherit;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.6rem;
+  outline: none;
+  resize: vertical;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Adds a focus effect when a visitor clicks a comment field */
+.comment-section input:focus,
+.comment-section textarea:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 119, 255, 0.1);
+}
+
+/* Styles the Send Comment button */
+.comment-section button {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Adds an interactive effect when hovering over the Send Comment button */
+.comment-section button:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 119, 255, 0.2);
+}
+
+/* =========================
+   PROFILE PICTURE
+========================= */
+
+/* Styles the profile picture in the About section */
+.profile-picture {
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+    /* Adds a blue border around the profile picture */
+  border: 0.2rem solid #0077ff;
+
+/* Creates a small gap between the image and its outer outline */
+outline: 0.15rem solid #0077ff;
+outline-offset: 0.3rem;
+    /* Adds depth around the profile picture */
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 119, 255, 0.2);
+    /* Makes hover changes happen smoothly */
+ /* Makes the size, shadow, and outline changes animate smoothly */
+transition:
+  transform 0.3s ease,
+  box-shadow 0.3s ease,
+  outline-color 0.3s ease;
+}
+
+/* Creates an interactive effect when hovering over the profile picture */
+.profile-picture:hover {
+  transform: scale(1.05);
+    /* Makes the profile picture glow more when hovered */
+  box-shadow: 0 0.8rem 2rem rgba(0, 119, 255, 0.35);
+  /* Makes the outer outline appear during hover */
+outline-color: #0077ff;
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* Stops animations for users who prefer reduced motion */
+  .hero-content,
+  #home::before,
+  body::before {
+    animation: none;
+  }
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 48rem) {
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #home {
+    padding: 5rem 5%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.8rem, 12vw, 5rem);
+  }
+
+  .hero-content h2 {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    padding: 1.5rem;
+  }
+
+
+  /* Projects responsive layout */
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-info {
+    padding: 1.5rem;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+  }
+
+  .project-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  /* Services responsive layout */
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+
+  /* Contact responsive layout */
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+
+  /* Footer responsive layout */
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    grid-column: auto;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 30rem) {
+
+  .hero-buttons {
+    width: 100%;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+}

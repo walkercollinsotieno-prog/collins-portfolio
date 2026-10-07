@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Accessibility Quiz</h1>
+    <p>Test your knowledge of web accessibility.</p>
+  </header>
+
+  <main>
+    <form>
+
+      <fieldset>
+        <legend>HTML Accessibility</legend>
+
+        <label for="name">What is the purpose of the alt attribute?</label>
+        <select id="name" name="name">
+          <option value="">Choose an answer</option>
+          <option value="description">Describe an image</option>
+          <option value="style">Change the image color</option>
+          <option value="size">Change the image size</option>
+        </select>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Semantic HTML</legend>
+
+        <p>Which element is most appropriate for the main navigation?</p>
+
+        <label>
+          <input type="radio" name="navigation" value="nav">
+          nav
+        </label>
+
+        <label>
+          <input type="radio" name="navigation" value="div">
+          div
+        </label>
+
+        <label>
+          <input type="radio" name="navigation" value="span">
+          span
+        </label>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Accessibility Practices</legend>
+
+        <p>Which practices can improve accessibility?</p>
+
+        <label>
+          <input type="checkbox" name="practice" value="labels">
+          Use labels for form controls
+        </label>
+
+        <label>
+          <input type="checkbox" name="practice" value="contrast">
+          Use sufficient color contrast
+        </label>
+
+        <label>
+          <input type="checkbox" name="practice" value="keyboard">
+          Support keyboard navigation
+        </label>
+
+      </fieldset>
+
+      <button type="submit">Submit Quiz</button>
+
+    </form>
+  </main>
+
+</body>
+</html>

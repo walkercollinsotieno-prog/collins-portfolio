@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penguin - Source Code</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f8fafc;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .source-code {
+      max-width: 60rem;
+      margin: auto;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    pre {
+      padding: 1.5rem;
+      overflow-x: auto;
+      background: #1e293b;
+      color: white;
+      border-radius: 0.8rem;
+      white-space: pre-wrap;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: #0077ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="source-code">
+
+    <a href="../index.html">← Back to Penguin Project</a>
+
+    <h1>CSS Penguin — Source Code</h1>
+
+    <p>
+      This project was built using HTML and CSS.
+    </p>
+
+    <h2>HTML</h2>
+
+    <pre id="html-code">Loading HTML...</pre>
+
+    <h2>CSS</h2>
+
+    <pre id="css-code">Loading CSS...</pre>
+
+  </main>
+
+  <script>
+    fetch("../index.html")
+      .then(response => response.text())
+      .then(code => {
+        document.getElementById("html-code").textContent = code;
+      });
+
+    fetch("../styles.css")
+      .then(response => response.text())
+      .then(code => {
+        document.getElementById("css-code").textContent = code;
+      });
+  </script>
+
+</body>
+</html>

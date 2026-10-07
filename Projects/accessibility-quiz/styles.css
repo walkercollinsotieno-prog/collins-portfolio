@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: #222;
+}
+
+header {
+  padding: 4rem 5%;
+  text-align: center;
+  background: linear-gradient(135deg, #0077ff, #7c3aed);
+  color: white;
+}
+
+header h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+header p {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+main {
+  width: 90%;
+  max-width: 50rem;
+  margin: 3rem auto;
+}
+
+form {
+  display: grid;
+  gap: 2rem;
+}
+
+fieldset {
+  padding: 2rem;
+  border: 0.1rem solid #ddd;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+legend {
+  padding: 0 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0077ff;
+}
+
+label {
+  display: block;
+  margin: 1rem 0;
+}
+
+select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: 0.1rem solid #bbb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+input {
+  margin-right: 0.5rem;
+}
+
+button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 119, 255, 0.2);
+}
+
+@media (max-width: 48rem) {
+  header {
+    padding: 3rem 5%;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  fieldset {
+    padding: 1.5rem;
+  }
+}
