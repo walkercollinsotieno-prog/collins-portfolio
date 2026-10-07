@@ -1,0 +1,6 @@
+# Allow search engines to crawl the entire website
+User-agent: *
+Allow: /
+
+# Tell search engines where the sitemap is located
+Sitemap: https://walkercollinsotieno-prog.github.io/collins-portfolio/sitemap.xml
