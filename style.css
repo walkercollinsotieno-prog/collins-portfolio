@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 /* =========================
    GLOBAL RESET
 ========================= */
@@ -13,9 +15,10 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  color: #e8eaf0;
+  background: #080b12;
 }
-
 /* =========================
    LIVE BACKGROUND
 ========================= */
@@ -187,14 +190,19 @@ nav a:hover::after {
   border-radius: 2rem;
 }
 
+
 .hero-content h1 {
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 1;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #0077ff, #7c3aed);
+  background: linear-gradient(110deg, #047857, #10b981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 .hero-content h2 {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
@@ -235,8 +243,10 @@ nav a:hover::after {
 }
 
 .hero-buttons a:first-child {
-  background: linear-gradient(90deg, #0077ff, #7c3aed);
-  color: white;
+  color: #ffffff;
+  background: linear-gradient(135deg, #047857, #10b981);
+  border: 0.1rem solid transparent;
+  box-shadow: 0 0.5rem 1.25rem rgba(5, 150, 105, 0.18);
 }
 
 .hero-buttons a:last-child {
@@ -1164,6 +1174,61 @@ transition:
 outline-color: #0077ff;
 }
 
+
+/* =========================
+   PORTFOLIO VIEW SWITCHING
+========================= */
+
+/* =========================
+   PORTFOLIO VIEW SWITCHING
+========================= */
+
+/* Hide sections that are not selected */
+section.view-hidden {
+  display: none !important;
+}
+
+/* Keep the selected section visible */
+section.view-active {
+  min-height: calc(100vh - 5rem);
+}
+
+/* Hide footer except on Contact */
+footer.view-hidden {
+  display: none !important;
+}
+
+
+/* =========================
+   SCROLL REVEAL ANIMATIONS
+========================= */
+
+/* Initial hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(-2rem);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+/* Visible state */
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+
 /* =========================
    REDUCED MOTION
 ========================= */
@@ -1303,3 +1368,358 @@ outline-color: #0077ff;
     text-align: center;
   }
 }
+
+
+/* =========================
+   PREMIUM PORTFOLIO THEME
+========================= */
+
+:root {
+  --dark-bg: #080b12;
+  --dark-card: #101520;
+  --dark-border: #252d3b;
+  --lime: #b6f566;
+  --lime-hover: #c8ff83;
+  --dark-text: #e8eaf0;
+  --muted-text: #a2aaba;
+  --light-bg: #f8fafc;
+  --emerald: #059669;
+}
+
+/* Modern typography */
+h1,
+h2,
+h3,
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* =========================
+   LIGHT HOME THEME
+========================= */
+
+#home {
+  background:
+    radial-gradient(circle at 85% 15%, #d1fae5, transparent 35%),
+    linear-gradient(135deg, #ffffff, #f0fdf4);
+  color: #17251f;
+}
+
+.hero-intro {
+  color: var(--emerald);
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.hero-content h1 {
+  background: linear-gradient(110deg, #047857, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  color: #52635a;
+}
+
+.hero-buttons a:first-child {
+  background: var(--emerald);
+}
+
+.hero-buttons a:last-child {
+  color: var(--emerald);
+  border-color: var(--emerald);
+}
+
+.hero-buttons a:hover {
+  box-shadow: 0 0.75rem 1.5rem rgba(5, 150, 105, 0.2);
+}
+
+/* =========================
+   DARK INNER SECTIONS
+========================= */
+
+#about,
+#skills,
+#projects,
+#services,
+#contact {
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(182, 245, 102, 0.045),
+      transparent 30%
+    ),
+    var(--dark-bg);
+  color: var(--dark-text);
+}
+
+#about .about-content h2,
+#skills .skills-content h2,
+#projects .projects-content h2,
+#services .services-content h2,
+#contact .contact-content h2 {
+  background: linear-gradient(100deg, #ffffff 25%, var(--lime) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-label {
+  color: var(--lime);
+  background: rgba(182, 245, 102, 0.08);
+  border-color: rgba(182, 245, 102, 0.22);
+}
+
+.about-description,
+.skills-description,
+.projects-description,
+.services-description,
+.contact-description {
+  color: var(--muted-text);
+}
+
+/* =========================
+   DARK CARDS
+========================= */
+
+.highlight,
+.about-details > div,
+.skill-card,
+.project-card,
+.service-card,
+.contact-item,
+.contact-form,
+.comment-section {
+  color: var(--dark-text);
+  background: var(--dark-card);
+  border-color: var(--dark-border);
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18);
+}
+
+.highlight h3,
+.about-details strong,
+.skill-card h3,
+.project-info h3,
+.service-card h3,
+.contact-item h3,
+.contact-form label,
+.comment-section h3,
+.comment-section label,
+.lets-connect h3 {
+  color: #f4f6fa;
+}
+
+.highlight p,
+.skill-card li,
+.project-info > p,
+.service-card p,
+.contact-item p,
+.contact-item a,
+.comment-section > p {
+  color: var(--muted-text);
+}
+
+.about-details span {
+  color: var(--lime);
+}
+
+.skill-card li::marker {
+  color: var(--lime);
+}
+
+/* Subtle lime hover glow */
+.highlight:hover,
+.about-details > div:hover,
+.skill-card:hover,
+.project-card:hover,
+.service-card:hover {
+  border-color: rgba(182, 245, 102, 0.4);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   PROJECT PREVIEWS
+========================= */
+
+.project-image {
+  background:
+    radial-gradient(circle at top right, #243322, transparent 55%),
+    #0b1019;
+}
+
+.penguin-preview {
+  color: var(--lime);
+  background: linear-gradient(135deg, #18251a, #263b24);
+  border: 1px solid rgba(182, 245, 102, 0.25);
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+.project-tech span {
+  color: var(--lime);
+  background: rgba(182, 245, 102, 0.07);
+  border-color: rgba(182, 245, 102, 0.2);
+}
+
+.project-buttons a:first-child {
+  color: #10150c;
+  background: var(--lime);
+}
+
+.project-buttons a:last-child {
+  color: var(--lime);
+  background: transparent;
+  border-color: rgba(182, 245, 102, 0.5);
+}
+
+.project-buttons a:hover {
+  box-shadow: 0 0.6rem 1.2rem rgba(182, 245, 102, 0.12);
+}
+
+/* =========================
+   FORMS AND CONNECTION LINKS
+========================= */
+
+.contact-form input,
+.contact-form textarea,
+.comment-section input,
+.comment-section textarea {
+  color: var(--dark-text);
+  background: #0b1019;
+  border-color: var(--dark-border);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder,
+.comment-section input::placeholder,
+.comment-section textarea::placeholder {
+  color: #788397;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.comment-section input:focus,
+.comment-section textarea:focus {
+  border-color: var(--lime);
+  box-shadow: 0 0 0 0.2rem rgba(182, 245, 102, 0.1);
+}
+
+.contact-form button,
+.comment-section button {
+  color: #10150c;
+  background: var(--lime);
+}
+
+.contact-form button:hover,
+.comment-section button:hover {
+  background: var(--lime-hover);
+  box-shadow: 0 0.6rem 1.2rem rgba(182, 245, 102, 0.12);
+}
+
+.connect-links a {
+  color: var(--lime);
+  background: var(--dark-card);
+  border-color: rgba(182, 245, 102, 0.4);
+}
+
+.connect-links a:hover {
+  color: #10150c;
+  background: var(--lime);
+}
+
+/* Profile image accent */
+.profile-picture {
+  border-color: var(--lime);
+  outline-color: var(--lime);
+  box-shadow: 0 0.5rem 1.5rem rgba(182, 245, 102, 0.12);
+}
+
+.profile-picture:hover {
+  box-shadow: 0 0.8rem 2rem rgba(182, 245, 102, 0.22);
+}
+
+/* =========================
+   NAVIGATION THEME
+========================= */
+
+/* Dark navigation for the inner sections */
+nav {
+  background: rgba(8, 11, 18, 0.88);
+  border-bottom-color: var(--dark-border);
+}
+
+nav a {
+  color: var(--dark-text);
+}
+
+nav a:hover {
+  color: var(--lime);
+}
+
+nav a::after {
+  background: var(--lime);
+}
+
+.logo {
+  background: linear-gradient(90deg, #ffffff, var(--lime));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Light navigation when Home is active */
+body:has(#home.view-active) nav {
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom-color: #e5e7eb;
+}
+
+body:has(#home.view-active) nav a {
+  color: #17251f;
+}
+
+body:has(#home.view-active) nav a:hover {
+  color: var(--emerald);
+}
+
+body:has(#home.view-active) nav a::after {
+  background: var(--emerald);
+}
+
+body:has(#home.view-active) .logo {
+  background: linear-gradient(90deg, #047857, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   SLIDE IN FROM THE LEFT
+========================= */
+
+.reveal {
+  transform: translateX(-2rem);
+}
+
+.reveal.reveal-visible {
+  transform: translateX(0);
+}
+
+/* =========================
+   DARK MOBILE DETAILS
+========================= */
+
+@media (max-width: 48rem) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .about-intro .profile-picture-wrapper {
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.reveal-visible {
+    transform: none;
+  }
+}
+
