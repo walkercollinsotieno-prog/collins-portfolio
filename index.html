@@ -1,22 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#faf9f6">
+  <meta name="description" content="Collins Otieno is an IT Technician and Web Developer based in Kisumu, Kenya, providing IT support, digital services, and responsive website development.">
 
-  <title>Collins Otieno | IT Technician</title>
+  <title>Collins Otieno | IT Technician & Web Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <nav>
-
-    <a href="#home" class="logo">Collins</a>
+  <nav aria-label="Main navigation">
+    <a href="#home" class="logo">Collins<span>.</span></a>
 
     <div class="nav-links">
       <a href="#home">Home</a>
@@ -26,713 +31,717 @@
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
-
   </nav>
 
+  <main>
 
-  <!-- Hero Section -->
-  <section id="home">
+    <!-- Home / Hero -->
+    <section id="home" class="view-active">
+      <div class="hero-content">
 
-    <div class="hero-content">
+        <p class="hero-intro">
+          <span class="status-dot"></span>
+          Available for IT opportunities
+        </p>
 
-      <p class="hero-intro">Hello, I'm</p>
+        <p class="hero-greeting">Hello, I'm</p>
 
-      <h1>Collins Otieno</h1>
+        <h1>Collins Otieno<span>.</span></h1>
 
-      <h2>IT Technician &amp; Web Developer</h2>
+        <h2>IT Technician <span>&amp;</span> Web Developer</h2>
 
-      <p class="hero-description">
-        I build modern, responsive websites and provide reliable IT support
-        and digital solutions.
-      </p>
+        <p class="hero-description">
+          I help people solve technology problems and build modern,
+          responsive websites. I enjoy learning, troubleshooting,
+          and turning ideas into practical digital solutions.
+        </p>
 
-      <div class="hero-buttons">
-        <a href="#projects">View My Work</a>
-        <a href="#contact">Contact Me</a>
+        <div class="hero-buttons">
+          <a href="#projects" class="button button-primary">
+            View My Work <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            href="Collins-Otieno-CV.pdf"
+            class="button button-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Check My CV <span aria-hidden="true">↗</span>
+          </a>
+
+          <a href="#contact" class="button button-text">
+            Contact Me <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Kisumu City, Kenya</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span>ICT Level 5</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span>Web Development</span>
+        </div>
+
+        <a href="#about" class="scroll-indicator">
+          <span class="scroll-line" aria-hidden="true"></span>
+          Discover more
+        </a>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="page-section view-hidden">
+      <div class="section-container about-content">
+
+        <p class="section-label">ABOUT ME</p>
+        <h2 class="section-heading">Technology with a purpose.</h2>
+
+        <div class="about-intro">
+
+          <div class="profile-picture-wrapper">
+            <img
+              src="images/profile.jpg"
+              alt="Collins Otieno"
+              class="profile-picture profile-main"
+              loading="lazy"
+            >
+
+            <img
+              src="images/profile-hover.jpg"
+              alt=""
+              aria-hidden="true"
+              class="profile-picture profile-hover"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="about-intro-text">
+            <h3>Who I Am</h3>
+
+            <p class="about-description">
+              I am Collins Otieno, an aspiring IT Technician and Web
+              Developer based in Kisumu City, Kisumu County, Kenya.
+              I have a background in ICT and practical experience with
+              software support, digital services, and technology
+              solutions. I am passionate about technology,
+              problem-solving, and creating useful digital solutions
+              that make everyday tasks easier.
+            </p>
+
+            <p class="about-description about-description-extra">
+              I continue to strengthen my skills through hands-on
+              practice, technical learning, and web development projects.
+              My goal is to grow into a dependable IT professional who
+              can support users and create effective digital experiences.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="about-highlights">
+
+          <article class="highlight">
+            <span class="card-number">01</span>
+            <h3>IT Support</h3>
+            <p>
+              Helping users troubleshoot software issues and find
+              practical solutions to everyday technology problems.
+            </p>
+          </article>
+
+          <article class="highlight">
+            <span class="card-number">02</span>
+            <h3>Web Development</h3>
+            <p>
+              Building responsive websites with clean layouts,
+              accessible structure, and modern HTML and CSS.
+            </p>
+          </article>
+
+          <article class="highlight">
+            <span class="card-number">03</span>
+            <h3>Practical Experience</h3>
+            <p>
+              Developing useful skills through ICT training, personal
+              projects, and digital service experience.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="about-details">
+
+          <div>
+            <span>Location</span>
+            <strong>Kisumu City, Kenya</strong>
+          </div>
+
+          <div>
+            <span>Education</span>
+            <strong>ICT Certificate / Level 5</strong>
+          </div>
+
+          <div>
+            <span>Career Goal</span>
+            <strong>IT Technician &amp; Web Developer</strong>
+          </div>
+
+        </div>
+
       </div>
 
-    </div>
-
-  </section>
-
-
-  <!-- About Section -->
-  <section id="about">
-
-  <div class="about-content">
-
-<!-- Section heading -->
-<p class="section-label">About Me</p>
-
-<!-- Holds the profile picture and Who I Am content -->
-<div class="about-intro">
-
-  <!-- Profile picture -->
-  <!-- Holds both the normal and hover profile images -->
-<div class="profile-picture-wrapper">
-
-  <!-- Normal profile picture -->
-  <img
-    src="images/profile.jpg"
-    alt="Collins Otieno"
-    class="profile-picture profile-main"
-  >
-
-  <!-- Image that will appear when hovered -->
-  <img
-    src="images/profile-hover.jpg"
-    alt="Futuristic superhero character"
-    class="profile-picture profile-hover"
-  >
-
-</div>
-  <!-- Who I Am text -->
-  <div class="about-intro-text">
-
-    <h2>Who I Am</h2>
-
-    <p class="about-description">
-      I am Collins Otieno, an aspiring IT Technician and Web Developer
-      based in Kisumu City, Kisumu County, Kenya. I have a background in
-      ICT and practical experience providing software support, cyber and
-      digital services, and technology solutions. I am passionate about
-      technology, problem-solving, and creating useful digital solutions
-      that make everyday tasks easier.
+      
+<!-- Certificates -->
+<div class="certificates-section" id="certificates">
+    <h3>My Certificates</h3>
+    <p class="certificates-intro">
+        Certificates and training that support my ICT
+        and web development skills.
     </p>
 
-  </div>
+    <div class="certificates-container">
 
-</div>
+        <!-- freeCodeCamp Certificate -->
+        <div class="certificate-card">
+            <div class="certificate-placeholder">
+                <span>freeCodeCamp</span>
+            </div>
 
-      <!-- About Highlights -->
-      <div class="about-highlights">
+            <h4>freeCodeCamp Certificate</h4>
+            <p>
+                Web development learning and practical coding
+                projects through freeCodeCamp.
+            </p>
+          
+<a
+    href="https://www.freecodecamp.org/certification/ut-f/responsive-web-design-v9"
+    class="certificate-button"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    View Certificate
+</a>
 
-        <div class="highlight">
-          <h3>IT Support</h3>
-          <p>
-            Providing practical technology support and helping users solve
-            software problems.
-          </p>
         </div>
 
-        <div class="highlight">
-          <h3>Web Development</h3>
-          <p>
-            Building modern and responsive websites while developing my
-            web development skills.
-          </p>
+        <!-- ACWICT Certificate -->
+        <div class="certificate-card">
+            <div class="certificate-placeholder">
+                <span>ACWICT</span>
+            </div>
+
+            <h4>ACWICT Certificate</h4>
+            <p>
+                ICT training and device repair skills.
+            </p>
+            <span class="certificate-status">Certificate image to be added</span>
         </div>
-
-        <div class="highlight">
-          <h3>Practical Experience</h3>
-          <p>
-            Gaining hands-on experience through Vision Ink Digital Hub
-            and ICT attachment at Kisumu City.
-          </p>
-        </div>
-
-      </div>
-
-
-      <!-- About Details -->
-      <div class="about-details">
-
-        <div>
-          <span>Location</span>
-          <strong>Kisumu City, Kenya</strong>
-        </div>
-
-        <div>
-          <span>Education</span>
-          <strong>ICT Certificate / Level 5</strong>
-        </div>
-
-        <div>
-          <span>Career Goal</span>
-          <strong>IT Technician, IT Support &amp; Web Development</strong>
-        </div>
-
-      </div>
 
     </div>
+</div>
 
-  </section>
 
   
-<section id="skills">
+    </section>
 
-  <div class="skills-content">
+    <!-- Skills -->
+    <section id="skills" class="page-section view-hidden">
+      <div class="section-container skills-content">
 
-    <p class="section-label">My Skills</p>
+        <p class="section-label">MY SKILLS</p>
+        <h2 class="section-heading">What I can do.</h2>
 
-    <h2>What I Can Do</h2>
+        <p class="section-description">
+          I have developed practical ICT skills through training,
+          personal projects, and hands-on digital service experience.
+        </p>
 
-    <p class="skills-description">
-      I have developed practical ICT skills through my training, projects,
-      and hands-on experience. Here are some of the areas I work with.
-    </p>
+        <div class="skills-grid">
 
-    
-<div class="skills-grid">
+          <article class="skill-card">
+            <span class="card-number">01</span>
+            <h3>IT Support &amp; Troubleshooting</h3>
+            <ul>
+              <li>Software troubleshooting</li>
+              <li>Computer support</li>
+              <li>Software updates</li>
+              <li>Basic bug fixing</li>
+              <li>System maintenance</li>
+            </ul>
+          </article>
 
-  <div class="skill-card">
+          <article class="skill-card">
+            <span class="card-number">02</span>
+            <h3>Web Development</h3>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Responsive web design</li>
+              <li>CSS Grid</li>
+              <li>Flexbox</li>
+            </ul>
+          </article>
 
-    <h3>IT Support &amp; Troubleshooting</h3>
+          <article class="skill-card">
+            <span class="card-number">03</span>
+            <h3>Device &amp; Software Support</h3>
+            <ul>
+              <li>Phone software support</li>
+              <li>Software updates</li>
+              <li>Junk file cleaning</li>
+              <li>Password recovery assistance</li>
+              <li>General device support</li>
+            </ul>
+          </article>
 
-    <ul>
-      <li>Software troubleshooting</li>
-      <li>Computer support</li>
-      <li>Software updates</li>
-      <li>Bug fixing</li>
-      <li>System maintenance</li>
-    </ul>
+          <article class="skill-card">
+            <span class="card-number">04</span>
+            <h3>Digital &amp; Cyber Services</h3>
+            <ul>
+              <li>Printing and photocopying</li>
+              <li>KRA online services</li>
+              <li>KUCCPS services</li>
+              <li>HELB application assistance</li>
+              <li>General digital services</li>
+            </ul>
+          </article>
 
-  </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Projects -->
+    <section id="projects" class="page-section view-hidden">
+      <div class="section-container projects-content">
 
-  <div class="skill-card">
+        <p class="section-label">MY PROJECTS</p>
+        <h2 class="section-heading">Things I've built.</h2>
 
-    <h3>Web Development</h3>
+        <p class="section-description">
+          These projects demonstrate my growing experience with HTML,
+          CSS, responsive layouts, animation, and accessible web design.
+        </p>
 
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Responsive Web Design</li>
-      <li>CSS Grid</li>
-      <li>Flexbox</li>
-    </ul>
+        <div class="projects-grid">
 
-  </div>
+          <article class="project-card">
+            <div class="project-image preview-penguin">
+              <span class="preview-index">PROJECT 01</span>
+              <div class="project-preview-title">CSS Penguin</div>
+              <span class="preview-caption">Illustration &amp; animation</span>
+            </div>
 
+            <div class="project-info">
+              <h3>CSS Penguin</h3>
+              <p>
+                A creative illustration built with HTML and CSS using
+                custom shapes, gradients, and interactive effects.
+              </p>
 
-  <div class="skill-card">
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Animation</span>
+              </div>
 
-    <h3>Device &amp; Software Support</h3>
+              <div class="project-buttons">
+                <a href="Projects/penguin/index.html" target="_blank" rel="noopener noreferrer">View Project ↗</a>
+                <a href="Projects/penguin/source/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </article>
 
-    <ul>
-      <li>Phone software support</li>
-      <li>Software updates</li>
-      <li>Junk file cleaning</li>
-      <li>Password recovery support</li>
-      <li>General device support</li>
-    </ul>
+          <article class="project-card">
+            <div class="project-image preview-magazine">
+              <span class="preview-index">PROJECT 02</span>
+              <div class="project-preview-title">The Magazine</div>
+              <span class="preview-caption">Editorial layout</span>
+            </div>
 
-  </div>
+            <div class="project-info">
+              <h3>Responsive Magazine</h3>
+              <p>
+                A magazine-style layout featuring CSS Grid, responsive
+                typography, flexible columns, and structured content.
+              </p>
 
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS Grid</span>
+                <span>Responsive Design</span>
+              </div>
 
-  <div class="skill-card">
+              <div class="project-buttons">
+                <a href="Projects/magazine/index.html" target="_blank" rel="noopener noreferrer">View Project ↗</a>
+                <a href="Projects/magazine/source/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </article>
 
-    <h3>Digital &amp; Cyber Services</h3>
+          <article class="project-card">
+            <div class="project-image preview-skyline">
+              <span class="preview-index">PROJECT 03</span>
+              <div class="project-preview-title">City Skyline</div>
+              <span class="preview-caption">CSS visual design</span>
+            </div>
 
-    <ul>
-      <li>Printing and photocopying</li>
-      <li>KRA online services</li>
-      <li>KUCCPS services</li>
-      <li>HELB assistance</li>
-      <li>Digital services</li>
-    </ul>
+            <div class="project-info">
+              <h3>Responsive City Skyline</h3>
+              <p>
+                A city illustration created with CSS shapes, variables,
+                gradients, and responsive layout techniques.
+              </p>
 
-  </div>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>CSS Variables</span>
+              </div>
 
-</div>
+              <div class="project-buttons">
+                <a href="Projects/city-skyline/index.html" target="_blank" rel="noopener noreferrer">View Project ↗</a>
+                <a href="Projects/city-skyline/source/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </article>
 
-  </div>
+          <article class="project-card">
+            <div class="project-image preview-ferris">
+              <span class="preview-index">PROJECT 04</span>
+              <div class="project-preview-title">Ferris Wheel</div>
+              <span class="preview-caption">Motion &amp; transforms</span>
+            </div>
 
-</section>
+            <div class="project-info">
+              <h3>Animated Ferris Wheel</h3>
+              <p>
+                An animated CSS illustration demonstrating rotation,
+                transforms, keyframes, and responsive sizing.
+              </p>
 
-<!-- Projects Section -->
-<section id="projects">
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Animation</span>
+              </div>
 
-  <div class="projects-content">
+              <div class="project-buttons">
+                <a href="Projects/ferris-wheel/index.html" target="_blank" rel="noopener noreferrer">View Project ↗</a>
+                <a href="Projects/ferris-wheel/source/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </article>
 
-    <p class="section-label">My Projects</p>
+          <article class="project-card">
+            <div class="project-image preview-gallery">
+              <span class="preview-index">PROJECT 05</span>
+              <div class="project-preview-title">Photo Gallery</div>
+              <span class="preview-caption">Flexible image layout</span>
+            </div>
 
-    <h2>Projects I've Built</h2>
+            <div class="project-info">
+              <h3>Flexbox Photo Gallery</h3>
+              <p>
+                A responsive gallery demonstrating flexible layouts,
+                wrapping, spacing, and image presentation.
+              </p>
 
-    <p class="projects-description">
-      Here are some of the projects I have built while developing my
-      HTML and CSS skills through practical web development projects.
-    </p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Flexbox</span>
+              </div>
 
-    <div class="projects-grid">
+              <div class="project-buttons">
+                <a href="Projects/photo-gallery/index.html" target="_blank" rel="noopener noreferrer">View Project ↗</a>
+                <a href="Projects/photo-gallery/source/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </article>
 
-      <!-- Project 1 -->
-      <article class="project-card reveal">
+          <article class="project-card">
+            <div class="project-image preview-quiz">
+              <span class="preview-index">PROJECT 06</span>
+              <div class="project-preview-title">Accessibility Quiz</div>
+              <span class="preview-caption">Inclusive web design</span>
+            </div>
 
-        <div class="project-image">
-          <div class="penguin-preview">
-            Penguin
+            <div class="project-info">
+              <h3>Accessibility Quiz</h3>
+              <p>
+                A quiz interface demonstrating semantic HTML, form
+                controls, accessibility concepts, and responsive styling.
+              </p>
+
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Accessibility</span>
+              </div>
+
+              <div class="project-buttons">
+                <a href="Projects/accessibility-quiz/index.html" target="_blank" rel="noopener noreferrer">View Project ↗</a>
+                <a href="Projects/accessibility-quiz/source/index.html" target="_blank" rel="noopener noreferrer">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="page-section view-hidden">
+      <div class="section-container services-content">
+
+        <p class="section-label">WHAT I DO</p>
+        <h2 class="section-heading">My services.</h2>
+
+        <p class="section-description">
+          Practical IT and digital services that help individuals
+          and businesses solve technical problems and work efficiently.
+        </p>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">01</span>
+            <h3>IT Support</h3>
+            <p>
+              Computer troubleshooting, software installation,
+              updates, system maintenance, and technical assistance.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">02</span>
+            <h3>Phone Software Support</h3>
+            <p>
+              Software updates, troubleshooting, junk file cleaning,
+              and general phone software assistance.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">03</span>
+            <h3>Web Development</h3>
+            <p>
+              Responsive websites built with HTML and CSS, focusing
+              on clear layouts and user-friendly experiences.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">04</span>
+            <h3>Cyber &amp; Digital Services</h3>
+            <p>
+              Printing, photocopying, online applications, document
+              support, and everyday digital services.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">05</span>
+            <h3>Wi-Fi &amp; Network Support</h3>
+            <p>
+              Basic Wi-Fi setup, connectivity troubleshooting, and
+              assistance with common network problems.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">06</span>
+            <h3>Gaming &amp; Digital Entertainment</h3>
+            <p>
+              PlayStation gaming services and digital entertainment
+              solutions for customers.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="page-section view-hidden">
+      <div class="section-container contact-content">
+
+        <p class="section-label">GET IN TOUCH</p>
+        <h2 class="section-heading">Let's work together.</h2>
+
+        <p class="section-description">
+          Have a project, technical problem, or opportunity to discuss?
+          Get in touch and let's start a conversation.
+        </p>
+
+        <div class="contact-grid">
+
+          <div class="contact-info">
+
+            <article class="contact-item">
+              <span class="contact-symbol" aria-hidden="true">@</span>
+              <div>
+                <h3>Email</h3>
+                <a href="mailto:walkercollinsotieno@gmail.com">
+                  walkercollinsotieno@gmail.com
+                </a>
+              </div>
+            </article>
+
+            <article class="contact-item">
+              <span class="contact-symbol" aria-hidden="true">+</span>
+              <div>
+                <h3>Phone</h3>
+                <a href="tel:+254736106705">+254 736 106 705</a>
+              </div>
+            </article>
+
+            <article class="contact-item">
+              <span class="contact-symbol" aria-hidden="true">⌖</span>
+              <div>
+                <h3>Location</h3>
+                <p>Kisumu City, Kisumu County, Kenya</p>
+              </div>
+            </article>
+
+            <div class="lets-connect">
+              <h3>Find me online</h3>
+
+              <div class="connect-links">
+                <a href="https://github.com/walkercollinsotieno-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/collins-oluoch-3b44a7343" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                <a href="https://wa.me/254736106705" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+                <a href="mailto:walkercollinsotieno@gmail.com">Email ↗</a>
+              </div>
+            </div>
+
           </div>
-        </div>
 
-        <div class="project-info">
+          <div class="contact-forms">
 
-          <h3>CSS Penguin</h3>
+            <form class="contact-form" id="contact-form">
+              <h3>Send me a message</h3>
 
-          <p>
-            A creative CSS illustration built using HTML and CSS,
-            featuring custom shapes, gradients, animations, and
-            interactive effects.
-          </p>
+              <p class="form-description">
+                Fill in your details to prepare a message in your email app.
+              </p>
 
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>Animation</span>
+              <label for="contact-name">Your Name</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                placeholder="Enter your name"
+                autocomplete="name"
+                required
+              >
+
+              <label for="contact-email">Your Email</label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+              >
+
+              <label for="contact-message">Your Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="5"
+                placeholder="How can I help you?"
+                required
+              ></textarea>
+
+              <button type="submit" class="button button-primary">
+                Prepare Email <span aria-hidden="true">↗</span>
+              </button>
+
+              <p class="form-status" id="contact-status" aria-live="polite"></p>
+            </form>
+
+            <form class="comment-section" id="comment-form">
+              <h3>Leave a Comment</h3>
+
+              <p class="form-description">
+                Have a question, suggestion, or feedback? Prepare a comment
+                using the form below.
+              </p>
+
+              <label for="comment-name">Your Name</label>
+              <input
+                type="text"
+                id="comment-name"
+                name="comment-name"
+                placeholder="Enter your name"
+                autocomplete="name"
+                required
+              >
+
+              <label for="comment-email">Your Email</label>
+              <input
+                type="email"
+                id="comment-email"
+                name="comment-email"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+              >
+
+              <label for="comment-message">Your Comment</label>
+              <textarea
+                id="comment-message"
+                name="comment-message"
+                rows="4"
+                placeholder="Write your comment..."
+                required
+              ></textarea>
+
+              <button type="submit" class="button button-outline">
+                Prepare Comment <span aria-hidden="true">↗</span>
+              </button>
+
+              <p class="form-status" id="comment-status" aria-live="polite"></p>
+            </form>
+
           </div>
 
-          <div class="project-buttons">
-            <a href="Projects/penguin/index.html" target="_blank">View Project</a>
-            <a href="Projects/penguin/source/index.html" target="_blank">Source Code</a>
-          </div>
-
         </div>
-
-      </article>
-
-      <!-- Project 2 -->
-<article class="project-card">
-
-  <div class="project-image">
-    <div class="penguin-preview">
-      Magazine
-    </div>
-  </div>
-
-  <div class="project-info">
-
-    <h3>Responsive Magazine</h3>
-
-    <p>
-      A responsive magazine layout built with CSS Grid, responsive
-      typography, flexible columns, and modern page structure.
-    </p>
-
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS Grid</span>
-      <span>Responsive Design</span>
-    </div>
-
-    <div class="project-buttons">
-  <a href="Projects/magazine/index.html" target="_blank">View Project</a>
-  <a href="Projects/magazine/source/index.html" target="_blank">Source Code</a>
-</div>
-
-  </div>
-
-</article>
-
-<!-- Project 3 -->
-<article class="project-card">
-
-  <div class="project-image">
-    <div class="penguin-preview">
-      City Skyline
-    </div>
-  </div>
-
-  <div class="project-info">
-
-    <h3>Responsive City Skyline</h3>
-
-    <p>
-      A creative city skyline illustration built with CSS shapes,
-      gradients, responsive units, CSS variables, and responsive
-      layouts.
-    </p>
-
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>CSS Variables</span>
-      <span>Responsive Design</span>
-    </div>
-
-   <div class="project-buttons">
-  <a href="Projects/city-skyline/index.html" target="_blank">View Project</a>
-  <a href="Projects/city-skyline/source/index.html" target="_blank">Source Code</a>
-</div>
-
-  </div>
-
-</article>
-
-<!-- Project 4 -->
-<article class="project-card">
-
-  <div class="project-image">
-    <div class="penguin-preview">
-      Ferris Wheel
-    </div>
-  </div>
-
-  <div class="project-info">
-
-    <h3>Animated Ferris Wheel</h3>
-
-    <p>
-      An animated CSS illustration featuring rotating elements,
-      CSS animations, transforms, and responsive sizing.
-    </p>
-
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>Animation</span>
-      <span>Transforms</span>
-    </div>
-
-   <div class="project-buttons">
-  <a href="Projects/ferris-wheel/index.html" target="_blank">View Project</a>
-  <a href="Projects/ferris-wheel/source/index.html" target="_blank">Source Code</a>
-</div>
-
-  </div>
-
-</article>
-
-<!-- Project 5 -->
-<article class="project-card">
-
-  <div class="project-image">
-    <div class="penguin-preview">
-      Photo Gallery
-    </div>
-  </div>
-
-  <div class="project-info">
-
-    <h3>Flexbox Photo Gallery</h3>
-
-    <p>
-      A responsive photo gallery built with Flexbox, flexible layouts,
-      wrapping, spacing, and responsive image techniques.
-    </p>
-
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>Flexbox</span>
-      <span>Responsive Design</span>
-    </div>
-
-    <div class="project-buttons">
-  <a href="Projects/photo-gallery/index.html" target="_blank">View Project</a>
-  <a href="Projects/photo-gallery/source/index.html" target="_blank">Source Code</a>
-</div>
-
-  </div>
-
-</article>
-
-<!-- Project 6 -->
-<article class="project-card">
-
-  <div class="project-image">
-    <div class="penguin-preview">
-      Accessibility Quiz
-    </div>
-  </div>
-
-  <div class="project-info">
-
-    <h3>Accessibility Quiz</h3>
-
-    <p>
-      An accessible quiz interface built with semantic HTML,
-      properly associated form controls, ARIA concepts, and
-      responsive styling.
-    </p>
-
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>Accessibility</span>
-      <span>Forms</span>
-    </div>
-<div class="project-buttons">
-  <a href="Projects/accessibility-quiz/index.html" target="_blank">View Project</a>
-  <a href="Projects/accessibility-quiz/source/index.html" target="_blank">Source Code</a>
-</div>
-
-  </div>
-
-</article>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="services">
-  <div class="services-content">
-
-    <p class="section-label">What I Do</p>
-
-    <h2>My Services</h2>
-
-    <p class="services-description">
-      I provide practical IT and digital services designed to help
-      individuals and businesses solve technical problems and work
-      more efficiently.
-    </p>
-
-    <div class="services-grid">
-
-      <article class="service-card">
-        <h3>💻 IT Support</h3>
-        <p>
-          Computer troubleshooting, software installation, system
-          maintenance, updates, and general technical support.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <h3>📱 Phone Software Support</h3>
-        <p>
-          Software updates, troubleshooting, bug fixes, junk file
-          cleaning, and general phone software support.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <h3>🌐 Web Development</h3>
-        <p>
-          Responsive websites built with modern HTML and CSS,
-          focusing on clean layouts and user-friendly experiences.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <h3>🖨️ Cyber & Digital Services</h3>
-        <p>
-          Printing, photocopying, online applications, document
-          support, and other everyday digital services.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <h3>📶 Wi-Fi & Network Support</h3>
-        <p>
-          Basic Wi-Fi setup, connectivity troubleshooting, and
-          assistance with everyday network problems.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <h3>🎮 Gaming & Digital Entertainment</h3>
-        <p>
-          PlayStation gaming services and digital entertainment
-          solutions for customers.
-        </p>
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================
-     CONTACT SECTION
-     ========================= -->
-
-<section id="contact">
-  <div class="contact-content">
-
-    <p class="section-label">Get In Touch</p>
-
-    <h2>Let's Work Together</h2>
-
-    <p class="contact-description">
-      Have a project, technical problem, or opportunity you'd like
-      to discuss? Feel free to get in touch with me.
-    </p>
-
-    <div class="contact-grid">
-
-      <div class="contact-info">
-
-        <div class="contact-item">
-          <h3>📧 Email</h3>
-          <a href="mailto:walkercollinsotieno@gmail.com">
-            walkercollinsotieno@gmail.com
-          </a>
-        </div>
-
-        <div class="contact-item">
-          <h3>📱 Phone</h3>
-          <a href="tel:+254736106705">
-            +254 736 106 705
-          </a>
-        </div>
-
-        <div class="contact-item">
-          <h3>📍 Location</h3>
-          <p>Kisumu City, Kisumu County, Kenya</p>
-        </div>
-
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer: visible when Contact is selected -->
+  <footer id="footer" class="view-hidden">
+    <div class="footer-content">
+
+      <div class="footer-info">
+        <a href="#home" class="footer-logo">Collins<span>.</span></a>
+        <p>IT Technician &amp; Web Developer</p>
+        <p>Kisumu City, Kisumu County, Kenya</p>
       </div>
 
-      <form class="contact-form">
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-        <label for="contact-name">Your Name</label>
-        <input
-          type="text"
-          id="contact-name"
-          name="name"
-          placeholder="Enter your name"
-          required
-        >
-
-        <label for="contact-email">Your Email</label>
-        <input
-          type="email"
-          id="contact-email"
-          name="email"
-          placeholder="Enter your email"
-          required
-        >
-
-        <label for="contact-message">Your Message</label>
-        <textarea
-          id="contact-message"
-          name="message"
-          rows="6"
-          placeholder="Write your message..."
-          required
-        ></textarea>
-
-        <button type="submit">Send Message</button>
-
-      </form>
-
-      <!-- Comment / Message section -->
-<div class="comment-section">
-
-  <!-- Heading for the comment area -->
-  <h3>Leave a Comment</h3>
-
-  <!-- Short explanation for visitors -->
-  <p>
-    Have a question, suggestion, or feedback? Leave me a message below.
-  </p>
-
-  <!-- Label for the visitor's name -->
-<label for="comment-name">Your Name</label>
-
-<!-- Input where the visitor enters their name -->
-<input
-  type="text"
-  id="comment-name"
-  name="comment-name"
-  placeholder="Enter your name"
-  required
->
-
-<!-- Label for the visitor's email -->
-<label for="comment-email">Your Email</label>
-
-<!-- Input where the visitor enters their email -->
-<input
-  type="email"
-  id="comment-email"
-  name="comment-email"
-  placeholder="Enter your email"
-  required
->
-
-<!-- Label for the visitor's comment or message -->
-<label for="comment-message">Your Comment</label>
-
-<!-- Large text area where the visitor can write their message -->
-<textarea
-  id="comment-message"
-  name="comment-message"
-  rows="6"
-  placeholder="Write your comment or message..."
-  required
-></textarea>
-
-<!-- Button for submitting the comment -->
-<button type="submit">Send Comment</button>
-
-</div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Collins Otieno. All rights reserved.</p>
+        <a href="#home">Back to Home ↑</a>
+      </div>
 
     </div>
-
-
-    <!-- Let's Connect area -->
-<div class="lets-connect">
-
-  <!-- Heading for the connection area -->
-  <h3>Let's Connect</h3>
-
-  <!-- Social and contact links will go inside this container -->
-  <div class="connect-links">
-
-  <!-- GitHub profile link -->
-  <a href="https://github.com/walkercollinsotieno-prog" target="_blank">
-    GitHub
-  </a>
-
-  <!-- LinkedIn profile link -->
-<a href="https://www.linkedin.com/in/collins-oluoch-3b44a7343" target="_blank">
-  LinkedIn
-</a>
-
-<!-- WhatsApp contact link -->
-<a href="https://wa.me/254736106705" target="_blank">
-  WhatsApp
-</a>
-
-<!-- Email contact link -->
-<a href="mailto:walkercollinsotieno@gmail.com">
-  Email
-</a>
-
-</div>
-
-</div>
-
-  </div>
-</section>
-
-<!-- =========================
-     FOOTER
-     ========================= -->
-
-<footer id="footer">
-  <div class="footer-content">
-
-    <div class="footer-info">
-      <h2>Collins Otieno</h2>
-      <p>IT Technician & Web Developer</p>
-      <p>Kisumu City, Kisumu County, Kenya</p>
-    </div>
-
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <div class="footer-bottom">
-      <p>
-        &copy; 2026 Collins Otieno. All rights reserved.
-      </p>
-    </div>
-
-  </div>
-</footer>
-
-<!-- Loads the JavaScript file after the page content -->
-<script src="script.js"></script>
+  </footer>
 
 </body>
-
 </html>
-
