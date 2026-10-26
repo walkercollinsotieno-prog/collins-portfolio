@@ -1923,3 +1923,66 @@ section.view-active {
     transition: none;
   }
 }
+
+
+/* ==============================
+   DARK MODE — PROJECT READABILITY FIX
+============================== */
+
+:root[data-theme="dark"] .project-card {
+  background: #19221b;
+  border-color: #354438;
+}
+
+:root[data-theme="dark"] .project-info h3 {
+  color: #edf3ed;
+}
+
+:root[data-theme="dark"] .project-info > p {
+  color: #c1cec3;
+}
+
+/* Give every project preview a dark, readable background */
+:root[data-theme="dark"] .project-image,
+:root[data-theme="dark"] .preview-penguin,
+:root[data-theme="dark"] .preview-magazine,
+:root[data-theme="dark"] .preview-skyline,
+:root[data-theme="dark"] .preview-ferris,
+:root[data-theme="dark"] .preview-gallery,
+:root[data-theme="dark"] .preview-quiz {
+  background: #202d24;
+  border-bottom: 1px solid #354438;
+}
+
+/* Make preview titles and captions easy to read */
+:root[data-theme="dark"] .project-preview-title {
+  color: #f1f7f1;
+}
+
+:root[data-theme="dark"] .preview-index {
+  color: #9be8b4;
+}
+
+:root[data-theme="dark"] .preview-caption {
+  color: #c1cec3;
+}
+
+/* Improve technology labels */
+:root[data-theme="dark"] .project-tech span {
+  color: #b8f0c8;
+  background: #263d2d;
+  border-color: #405c47;
+}
+
+/* Keep the Source Code button readable */
+:root[data-theme="dark"] .project-buttons a:last-child {
+  color: #edf3ed;
+  background: #202b22;
+  border-color: #506253;
+}
+
+:root[data-theme="dark"] .project-buttons a:last-child:hover {
+  color: #b8f0c8;
+  background: #293b2e;
+  border-color: #77d69a;
+}
