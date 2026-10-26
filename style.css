@@ -167,6 +167,47 @@ nav {
   gap: clamp(0.75rem, 2vw, 1.8rem);
 }
 
+.nav-header {
+  display: contents;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.theme-toggle,
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.8rem;
+  color: var(--text-main);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover,
+.nav-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+}
+
 .nav-links a {
   position: relative;
   padding: 0.3rem 0;
@@ -1486,23 +1527,60 @@ section.view-active {
 
   nav {
     position: sticky;
-    padding: 0.9rem 1.25rem;
+    padding: 0.8rem 1.25rem;
     flex-direction: column;
+    align-items: stretch;
     gap: 0.75rem;
+  }
+
+  .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .nav-controls {
+    gap: 0.4rem;
   }
 
   .logo {
     font-size: 1.5rem;
   }
 
+  .theme-toggle,
+  .nav-toggle {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
   .nav-links {
+    display: none;
     width: 100%;
-    justify-content: center;
-    gap: 0.5rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.15rem;
+    padding: 0.45rem 0 0.2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  nav.menu-open .nav-links {
+    display: flex;
   }
 
   .nav-links a {
-    font-size: 0.82rem;
+    padding: 0.6rem 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-links a::after {
+    display: none;
   }
 
   #home {
@@ -1709,5 +1787,139 @@ section.view-active {
   .reveal.reveal-visible {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ==============================
+   DARK THEME
+   Activated by data-theme="dark" on the root element.
+============================== */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #111713;
+  --surface: #19221b;
+  --surface-soft: #202b22;
+  --surface-green: #1c3023;
+  --text-main: #edf3ed;
+  --text-muted: #b8c5b9;
+  --text-soft: #94a396;
+  --accent: #77d69a;
+  --accent-hover: #9be8b4;
+  --accent-light: #233b2b;
+  --border: #303d32;
+  --border-strong: #405144;
+  --shadow-sm: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.16);
+  --shadow-md: 0 1rem 2.5rem rgba(0, 0, 0, 0.24);
+  --shadow-lg: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.32);
+}
+
+:root[data-theme="dark"] body {
+  background: var(--page-bg);
+  color: var(--text-main);
+}
+
+:root[data-theme="dark"] nav {
+  background: rgba(17, 23, 19, 0.94);
+  border-bottom-color: rgba(220, 235, 220, 0.1);
+}
+
+:root[data-theme="dark"] .theme-toggle,
+:root[data-theme="dark"] .nav-toggle {
+  color: var(--text-main);
+  background: var(--surface);
+  border-color: var(--border-strong);
+}
+
+:root[data-theme="dark"] .hero-content h1,
+:root[data-theme="dark"] .hero-content h2,
+:root[data-theme="dark"] .hero-content h3,
+:root[data-theme="dark"] .section-heading,
+:root[data-theme="dark"] .about-intro h2,
+:root[data-theme="dark"] .certificate-card h4 {
+  color: var(--text-main);
+}
+
+:root[data-theme="dark"] .contact-form input,
+:root[data-theme="dark"] .contact-form textarea,
+:root[data-theme="dark"] .comment-section input,
+:root[data-theme="dark"] .comment-section textarea,
+:root[data-theme="dark"] .contact-form input:focus,
+:root[data-theme="dark"] .contact-form textarea:focus,
+:root[data-theme="dark"] .comment-section input:focus,
+:root[data-theme="dark"] .comment-section textarea:focus {
+  color: var(--text-main);
+  background: #151d17;
+  border-color: var(--border-strong);
+}
+
+:root[data-theme="dark"] .contact-form input::placeholder,
+:root[data-theme="dark"] .contact-form textarea::placeholder,
+:root[data-theme="dark"] .comment-section input::placeholder,
+:root[data-theme="dark"] .comment-section textarea::placeholder {
+  color: var(--text-soft);
+}
+
+:root[data-theme="dark"] .certificates-intro,
+:root[data-theme="dark"] .certificate-card p {
+  color: var(--text-muted);
+}
+
+:root[data-theme="dark"] .certificate-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .certificate-placeholder {
+  background: #203329;
+  color: #a5e8b9;
+}
+
+:root[data-theme="dark"] .certificate-status {
+  color: #a5e8b9;
+}
+
+:root[data-theme="dark"] .certificate-button {
+  background: #276b43;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .certificate-button:hover {
+  background: #328253;
+}
+
+:root[data-theme="dark"] .lets-connect {
+  background: var(--surface-soft);
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .connect-links a {
+  color: var(--text-main);
+  background: var(--surface);
+  border-color: var(--border-strong);
+}
+
+:root[data-theme="dark"] .connect-links a:hover {
+  color: #101811;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+:root[data-theme="dark"] .highlight,
+:root[data-theme="dark"] .skill-card,
+:root[data-theme="dark"] .project-card,
+:root[data-theme="dark"] .service-card,
+:root[data-theme="dark"] .contact-item {
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .nav-links {
+  border-top-color: var(--border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .nav-toggle {
+    transition: none;
   }
 }
